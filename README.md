@@ -1,6 +1,7 @@
 ## # 小组信息
 - 小组名称：
 - 小组成员:
+
   刘卓益（2025303110003）[@Lzy-NICE](https://github.com/Lzy-NICE)  
   李俊杰（）  
   朱烁龙（）  
@@ -19,7 +20,7 @@
 代码文件：re包中的intro.qmd
 结果图片：re包中的Fig_1b_Grouped_Phylum_Barplot
 
-- **Fig.1c 复现(李俊杰)：**
+- **Fig.1c 复现 (李俊杰)：**
 代码文件：plot_fig1c.R
 结果图片：fig1c_phylum_abundance.png
 
@@ -27,9 +28,9 @@
 代码文件：
 结果图片：
 
-- **Fig.1d复现（朱烁龙）：**
+- **Fig.1e 复现（朱烁龙）：**
 代码文件：
 结果图片：
 
-- **Fig.1f复现（章靖）：**
+- **Fig.1f 复现（章靖）：**
 代码文件、结果图片：论文图1F复现
