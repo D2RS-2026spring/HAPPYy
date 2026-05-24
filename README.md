@@ -1,11 +1,12 @@
 ## # 小组信息
 - 小组名称：
 - 小组成员:
-刘卓益（2025303110003）[@Lzy-NICE]
-李俊杰（）
-朱烁龙（）
-高心灵（）
-章靖（）
+
+刘卓益（2025303110003）[@Lzy-NICE](https://github.com/Lzy-NICE)  
+李俊杰（）  
+朱烁龙（）  
+高心灵（）  
+章靖（）  
 # 论文信息
 - 论文题目:《Multiple micronutrient deficiencies in early life cause multi-kingdom alterations in the gut microbiome and intrinsic antibiotic resistance genes in mice》
 - DOI：10.1038/s41564-023-01519-3
