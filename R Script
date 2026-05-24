@@ -1,0 +1,34 @@
+library(ggplot2)
+library(ggpubr)
+
+# 完全按照论文 Fig.1d 构造数据
+set.seed(123)
+df <- data.frame(
+  Group = c(
+    rep("CON Day0",10),
+    rep("LM Day0",10),
+    rep("CON Day28",10),
+    rep("LM Day28",10)
+  ),
+  Shannon = c(
+    rnorm(10,3.0,0.2),  # CON Day0
+    rnorm(10,3.0,0.2),  # LM Day0
+    rnorm(10,2.8,0.2),  # CON Day28
+    rnorm(10,3.5,0.2)   # LM Day28（显著升高）
+  )
+)
+
+# 画论文 Figure 1d 一模一样的图
+ggplot(df, aes(Group, Shannon, fill=Group)) +
+  geom_boxplot(width=0.6, outlier.shape=21, outlier.size=2) +
+  geom_jitter(width=0.2, size=1.5, alpha=0.7) +
+  scale_fill_manual(values=c("gray80","gray80","gray60","#E69F00")) +
+  labs(y="Shannon diversity", x="") +
+  theme_classic() +
+  theme(legend.position="none") +
+  # 论文标注：Day0 ns，Day28 P=0.002
+  stat_compare_means(
+    comparisons = list(c("CON Day0","LM Day0"), c("CON Day28","LM Day28")),
+    label = "p.signif",
+    method = "wilcox.test"
+  )
