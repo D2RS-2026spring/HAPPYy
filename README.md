@@ -28,8 +28,8 @@
 结果图片：fig_1d.png
 
 - **Fig.1e 复现（高心灵）：**
-代码文件：R Script
-结果图片：fig_1d.png
+代码文件：intro.qmd
+结果图片：Fig_1e_Beta_Diversity.png
 
 - **Fig.1f 复现（章靖）：**
 代码文件、结果图片：论文图1F复现
