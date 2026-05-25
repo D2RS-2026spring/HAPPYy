@@ -23,11 +23,11 @@
 代码文件：plot_fig1c.R
 结果图片：fig1c_phylum_abundance.png
 
-- **Fig.1d 复现（高心灵）：**
-代码文件：
-结果图片：
+- **Fig.1d 复现（朱烁龙）：**
+代码文件：R Script
+结果图片：fig_1d.png
 
-- **Fig.1e 复现（朱烁龙）：**
+- **Fig.1e 复现（高心灵）：**
 代码文件：R Script
 结果图片：fig_1d.png
 
