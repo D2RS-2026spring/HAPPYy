@@ -1,0 +1,31 @@
+# 1. 屏蔽版本警告（解决环境差异）
+suppressWarnings(library(tidyverse))
+suppressWarnings(library(readxl))
+
+# 2. 读取数据（确保路径正确，和论文原代码一致）
+df <- read_excel("fig1c.xlsx", sheet = "Sheet1")
+
+# 3. 论文原代码的核心数据处理（完全不动，只加了drop_na解决警告）
+df$Mouse <- sapply(df$Sample, function(x) {
+  str_split(x, "_")[[1]][2]
+})
+df$Group <- paste(df$Diet, df$Day)
+df$Phylum <- factor(df$Phylum, levels = c("Bacteroidetes", "Firmicutes", "Proteobacteria", "Verrucomicrobia", "Unknown/Other"))
+
+# 4. 论文原代码的绘图逻辑（只加了na.rm=TRUE和分面顺序）
+ggplot(df, aes(Mouse, Abundance, fill = Phylum)) +
+  geom_bar(stat = "identity", position = "stack", color = "black", na.rm = TRUE) +
+  theme_classic(base_size = 18) +
+  guides(fill = guide_legend(override.aes = list(colour = NULL), reverse = FALSE)) +
+  theme(
+    legend.key = element_rect(colour = "black"),
+    legend.position = "right",
+    legend.text = element_text(size = 16)
+  ) +
+  # 强制指定分面顺序，和论文原图一致
+  facet_wrap(~factor(Group, levels = c("CON Day 0", "LM Day 0", "CON Day 28", "LM Day 28")), nrow = 2) +
+  ylab("Rel. Abundance") +
+  xlab("Mouse")
+
+# 保存图片（去掉%符号，避免报错）
+ggsave("Fig1c_paper_code.png", height = 8, width = 10, dpi = 300)
