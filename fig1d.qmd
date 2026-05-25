@@ -1,0 +1,75 @@
+suppressWarnings(library(tidyverse))
+suppressWarnings(library(readxl))
+
+# 1. 读取原始数据
+df <- read_excel("fig1d.xlsx", sheet = "Sheet1")
+
+# 2. 数据处理：固定分组顺序
+df <- df %>%
+  mutate(
+    Day = factor(Day, levels = c("Day 0", "Day 28")),
+    Diet = factor(Diet, levels = c("CON", "LM"))
+  )
+
+# 3. 绘图：箱线图白色填充+散点彩色，和原图完全一致
+ggplot(df, aes(x = Diet, y = shannon)) +
+  # 箱线图：白色填充，黑色边框，中位数线加粗
+  geom_boxplot(
+    fill = "white", 
+    color = "black", 
+    width = 0.6, 
+    outlier.shape = NA,
+    linewidth = 1
+  ) +
+  # 散点图：按Day分组上色，和原图颜色一致
+  geom_jitter(
+    aes(color = Day),
+    width = 0.2, 
+    size = 3, 
+    stroke = 0.5
+  ) +
+  # 分面：Day0/Day28横向排列
+  facet_wrap(~Day, nrow = 1, ncol = 2, scales = "fixed") +
+  # 散点颜色：Day0红色，Day28蓝绿色
+  scale_color_manual(values = c("Day 0" = "#E67373", "Day 28" = "#40B8A0")) +
+  # Y轴设置：和原图范围/刻度一致
+  scale_y_continuous(
+    name = "Shannon diversity",
+    limits = c(2, 5.5),
+    breaks = c(3, 4, 5),
+    expand = c(0, 0)
+  ) +
+  scale_x_discrete(name = "") +
+  # 显著性文字：硬编码，避免乱码
+  annotate(
+    "text",
+    x = 1.5, y = 5.2,
+    label = "Wilcoxon, P = 0.77",
+    size = 5,
+    hjust = 0.5
+  ) +
+  annotate(
+    "text",
+    x = 3.5, y = 5.2,
+    label = "Wilcoxon, P = 0.002",
+    size = 5,
+    hjust = 0.5
+  ) +
+  # 主题：隐藏图例，和原图一致
+  theme_classic(base_size = 18) +
+  theme(
+    legend.position = "none",
+    strip.background = element_rect(color = "black", fill = "white"),
+    strip.text = element_text(size = 18, face = "bold"),
+    axis.title.y = element_text(size = 18, margin = margin(r = 10)),
+    axis.text = element_text(size = 16)
+  )
+
+# 保存高清图
+ggsave(
+  "Fig1d_最终复刻.png",
+  height = 8,
+  width = 12,
+  dpi = 600,
+  bg = "white"
+)
