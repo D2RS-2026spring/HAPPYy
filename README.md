@@ -3,8 +3,8 @@
 - 小组成员:  
   刘卓益（2025303110003）[@Lzy-NICE](https://github.com/Lzy-NICE)  
   李俊杰（2025303120105）[@lijj2k](https://github.com/lijj2k)  
-  朱烁龙（）   
-  高心灵（）   
+  朱烁龙（2025303120103）[@DragonBron23](https://github.com/DragonBron23)
+  高心灵（2025303120157）[@gaoxinling](https://github.com/gaoxinling)
   章靖（2025303110106）[@zh–ang–jing](https://github.com/zh–ang–jing)
 # 论文信息
 - 论文题目:《Multiple micronutrient deficiencies in early life cause multi-kingdom alterations in the gut microbiome and intrinsic antibiotic resistance genes in mice》
@@ -28,8 +28,8 @@
 结果图片：
 
 - **Fig.1e 复现（朱烁龙）：**
-代码文件：
-结果图片：
+代码文件：R Script
+结果图片：fig_1d.png
 
 - **Fig.1f 复现（章靖）：**
 代码文件、结果图片：论文图1F复现
