@@ -1,0 +1,40 @@
+# Introduction
+
+This is a book created from markdown and executable code.
+
+See @knuth84 for additional discussion of literate programming.
+
+
+```{r}
+# 1. 切换到目标文件夹 (注意这里的斜杠方向)
+setwd("C:/Users/lenovo/Desktop/lunwenfuxian/fig1e")
+
+# 2. 加载需要的包
+library(tidyverse)
+library(ggpubr)
+# 如果你的文件真的是 .xlsx 结尾，必须加载 readxl 包来读取
+library(readxl) 
+
+# 3. 读取表格数据 (已修正读取 Excel 的函数)
+# 如果你的文件其实是 CSV 格式，请改回 mds_data <- read_csv("你的文件名.csv")
+mds_data <- read_excel("Source Data Fig 1.xlsx")
+
+# 4. 设置分组因子
+mds_data$Group = factor(mds_data$Group, 
+                        levels = c('CON Day 0','LM Day 0','CON Day 28','LM Day 28'))
+
+# 5. 画图
+p = ggplot(mds_data, aes(x = MDS1, y = MDS2, color = Group)) +
+    geom_point(size = 2) + 
+    stat_ellipse(linewidth = 1) +  
+    theme_classic(base_size = 20) + 
+    xlab('NMDS 1') + ylab('NMDS 2') + 
+    ggtitle('Bray-Curtis Beta Diversity')
+
+print(p)
+
+# 6. 保存图片
+# 因为前面已经切换了工作目录，所以这里会自动保存在 fig1e 文件夹下
+# 如果你的 fig1e 下面没有 'Plots/Bacteriome/' 这两个子文件夹，直接写文件名即可：
+ggsave('Fig_1e_Beta_Diversity.png', plot = p, height = 5, width = 7)
+```
