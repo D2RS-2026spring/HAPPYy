@@ -20,12 +20,12 @@
 结果图片：re包中的Fig_1b_Grouped_Phylum_Barplot.png
 
 - **Fig.1c 复现  (李俊杰)：**
-代码文件：plot_fig1c.R
-结果图片：fig1c_phylum_abundance.png
+代码文件：fig1c.pmd
+结果图片：Fig1c.png
 
 - **Fig.1d 复现（朱烁龙）：**
-代码文件：R Script
-结果图片：fig_1d.png
+代码文件：fig1d.pmd
+结果图片：Fig1d.png
 
 - **Fig.1e 复现（高心灵）：**
 代码文件：intro.qmd
