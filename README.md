@@ -1,5 +1,5 @@
 ## # 小组信息
-- 小组名称：
+- 小组名称：好好学习 天天向上
 - 小组成员:  
   刘卓益（2025303110003）[@Lzy-NICE](https://github.com/Lzy-NICE)  
   李俊杰（2025303120105）[@lijj2k](https://github.com/lijj2k)  
