@@ -10,7 +10,7 @@
 - 论文题目:《Multiple micronutrient deficiencies in early life cause multi-kingdom alterations in the gut microbiome and intrinsic antibiotic resistance genes in mice》
 - DOI：10.1038/s41564-023-01519-3
 # 项目内容
-- 项目对公开发表在Nature Microbiology的论文进行结果进行复现。
+- 项目对公开发表在Nature Microbiology的论文结果进行复现。
 - 论文数据与分析代码提供在 GitHub 仓库 https://github.com/armetcal/Littlejohn_Micronutrient_ARG_2023 中，源数据随文章提供。
 - 本项目使用原始数据“Source Data Fig 1.xlsx”
 - 复现结果具体内容为 论文Figure 1中的： (b-c) 按组和个体小鼠在门水平上绘制的条形图。条形代表平均相对丰度。(d) 第0天和第28天的细菌Shannon α多样性。 (e) 按日常和饮食治疗划分的 Bray-Curtis β细菌多样性。 (f) 肠杆菌 cfu 计数。
