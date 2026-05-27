@@ -14,6 +14,7 @@
 - 论文数据与分析代码提供在 GitHub 仓库 https://github.com/armetcal/Littlejohn_Micronutrient_ARG_2023 中，源数据随文章提供。
 - 本项目使用原始数据“Source Data Fig 1.xlsx”
 - 复现结果具体内容为 论文Figure 1中的： (b-c) 按组和个体小鼠在门水平上绘制的条形图。条形代表平均相对丰度。(d) 第0天和第28天的细菌Shannon α多样性。 (e) 按日常和饮食治疗划分的 Bray-Curtis β细菌多样性。 (f) 肠杆菌 cfu 计数。
+- 仓库链接：https://github.com/D2RS-2026spring/HAPPYy
 ## 具体分工与文件
 - **Fig.1b 复现（刘卓益）：**
 代码文件：re包中的intro.qmd
